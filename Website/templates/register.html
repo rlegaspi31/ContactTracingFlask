@@ -1,0 +1,77 @@
+{%extends "layout.html"%}
+{%block content%}
+<form class="reg-section" method="post" action="" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <div class="container">
+        <fieldset>
+            <form>
+                <div class="form-row">
+                    <!-- First and Last -->
+                    <div class="form-group col-md-6">
+                        {{form.first.label(class = "form-control-label text-light")}}
+                        {{form.first(class="form-control", placeholder="First Name")}}
+                    </div>
+                    <div class="form-group col-md-6">
+                        {{form.last.label(class = "form-control-label text-light")}}
+                        {{form.last(class="form-control" ,placeholder="Last Name")}}
+                    </div> <!-- First and Last -->
+                </div>
+                <div class="form-group">
+                    <!--Select -->
+                    {{form.age.label(class = "form-control-label text-light")}}
+                    {{form.age(class = "form-control form-control-sm" )}}
+                </div>
+                <!--Select -->
+                <div class="container us-p">
+                    <!-- Contained add and phoneemail-->
+                    <div class="form-group">
+                        {{form.address.label(class = "form-control-label text-light")}}
+                        {{form.address(class = "form-control form-control-sm", placeholder="Input address")}}
+
+                    </div>
+                    <div class="form-group">
+                        {{form.email.label(class = "form-control-label text-light")}}
+                        {%if form.email.errors%}
+                        {{form.email(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {%for error in form.email.errors%}
+                            <h5>{{error}}</h5>
+                            {%endfor%}
+                        </div>
+                        {%else%}
+                        {{form.email(class = "form-control form-control-sm ")}}
+                        {%endif%}
+
+                    </div>
+                    <div class="form-group">
+                        {{form.phone.label(class = "form-control-label text-light")}}
+                        {%if form.phone.errors%}
+                        {{form.phone(class ="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {%for error in form.phone.errors%}
+                            <h5>{{error}}</h5>
+                            {%endfor%}
+                        </div>
+
+                        {%else%}
+                        {{form.phone(class = "form-control form-control-sm")}}
+                        {%endif%}
+                    </div>
+                </div> <!-- Contained user and pass -->
+                <div class="form-row regbut">
+                    <div class="col-md-9 subsub"> {{form.submit(class="btn btn-secondary")}} </div>
+                    <div class="col"><a class="btn btn-primary" href="{{url_for('home')}}">Back to Home</a>
+                    </div>
+                </div>
+
+
+
+            </form>
+        </fieldset>
+
+    </div>
+
+
+</form>
+
+{%endblock%}

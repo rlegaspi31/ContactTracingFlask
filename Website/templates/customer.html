@@ -1,0 +1,42 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="account-wrapper">
+
+    <div class="media user-acct">
+
+        <img class="rounded-circle img-circ" src="{{image_file}}">
+        <div class="media-body">
+            <h6></h6>
+            <h4>{{user.first}} {{user.last}} {{user.age}}</h4>
+            <h6>{{user.phone}}</h6>
+            <h6 class="font-weight-light">{{user.address}}</h6>
+            <h6 class="font-weight-light">{{user.email}}</h6>
+        </div>
+    </div>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Date Recorded</th>
+                <th scope="col">Time Logged In</th>
+            </tr>
+            {%for user in user_check%}
+            <tr>
+                <th scope="col">{{user.date_recorded.strftime('%Y-%m-%d')}}</th>
+                <th scope="col">{{user.date_recorded.strftime('%I:%M %p')}}</th>
+            </tr>
+            {%endfor%}
+        </thead>
+        <tbody>
+            <tr>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+{%endblock%}
+<!--
+{{user.first}} {{user.last}}
+{{user.age}}

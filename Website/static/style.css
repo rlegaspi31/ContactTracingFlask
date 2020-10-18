@@ -1,0 +1,277 @@
+body {
+  background-image: url(Covid-19.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.content-bar {
+  background-color: #b3664d;
+  height: 729px;
+  width: 170px;
+  margin-left: 0;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.user-date {
+  background-color: #edf7f2;
+  margin-top: 25px;
+  height: 500px;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.acc-reg {
+  margin-top: 100px;
+  width: 200px;
+  margin-left: 200px;
+}
+
+.btn-acc {
+  width: 300px;
+}
+
+.btn-reg {
+  margin-top: 25px;
+  width: 300px;
+}
+.gr-l {
+  margin-top: 25px;
+}
+
+.content-section {
+  width: 350px;
+  padding: 10px 20px;
+  border: 5px solid #dddddd;
+  margin-left: 150px;
+  margin-top: 150px;
+  border-radius: 3px;
+}
+
+.content-user {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.unique-user {
+  padding: 150px 0px 0px 0px;
+}
+.list-section {
+  margin-top: 30px;
+  width: 230px;
+}
+
+.main-con {
+  margin: 90px 100px 0px 100px;
+}
+.user-list {
+  background-color: white;
+  padding: 20px;
+}
+.reg-section {
+  width: 45rem;
+  background-color: #2c3e50;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin-left: 5rem;
+  box-shadow: 0.2rem 0.5rem 0.5rem #5d6d7e;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-acct {
+  background-color: white;
+  width: 500px;
+}
+.user-acct-confirm {
+  background-color: white;
+  width: 500px;
+  margin-left: 150px;
+}
+
+.img-circ {
+  height: 150px;
+  margin-right: 50px;
+}
+
+.form-modal {
+  padding: 10px 10px 0px 10px;
+}
+
+.modal-confirm {
+  width: 500px;
+  margin-left: 550px;
+  padding: 10px;
+}
+
+@media (max-width: 1500px) {
+  .navbar {
+    width: 100%;
+  }
+  main .row {
+    margin-right: 5rem;
+  }
+  .deldel {
+    width: 10%;
+    margin-right: 4rem;
+  }
+  .reg-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 10rem;
+    margin-left: 0; */
+    /* top: 1.5rem;
+    right: 0;
+    left: 2.7rem; */
+  }
+}
+
+@media (max-width: 2560px) {
+  .navbar {
+    width: 100%;
+  }
+  .deldel {
+    width: 10%;
+  }
+  .main-con {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .reg-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 10rem;
+    margin-left: 0; */
+    top: 3rem;
+    right: 0;
+    left: 2.7rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 75%;
+  }
+  main .row {
+    padding-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-wrapper {
+    padding-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-wrapper button {
+    width: 20rem;
+  }
+
+  .home-wrapper a {
+    width: 20rem;
+  }
+
+  /* .reg-section{
+    margin-left: 0;
+  } */
+}
+
+@media (max-width: 770px) {
+  .reg-section {
+    width: 100%;
+  }
+
+  .regbut .subsub {
+    padding-bottom: 0.5rem;
+  }
+  .navbar {
+    width: 100%;
+  }
+
+  .account-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .deldel {
+    margin-right: 30rem;
+  }
+
+  .account-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .account-wrapper .user-acct {
+    width: 30rem;
+    padding-right: 10rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .navbar {
+    width: 100%;
+  }
+  .deldel {
+    margin-right: 30rem;
+  }
+  main .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+  }
+  .home-wrapper {
+    margin-right: 5rem;
+  }
+  .reg-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 70%;
+  }
+  .navbar {
+    width: 100%;
+  }
+  .reg-section {
+    width: 100%;
+  }
+  .deldel {
+    margin-right: 45rem;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 60%;
+  }
+  .navbar {
+    width: 100%;
+  }
+  .reg-section {
+    width: 100%;
+  }
+  .deldel {
+    margin-right: 45rem;
+  }
+}

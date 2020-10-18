@@ -1,0 +1,51 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="media user-acct-confirm">
+
+    <img class="rounded-circle img-circ" src="{{image_file}}">
+    <div class="media-body">
+        <h6></h6>
+        <h4>{{user.first}} {{user.last}} {{user.age}}</h4>
+        <h6>{{user.phone}}</h6>
+        <h6 class="font-weight-light">{{user.address}}</h6>
+        <h6 class="font-weight-light">{{user.email}}</h6>
+    </div>
+</div>
+
+<form method='POST' , enctype="multipart/form-data" action="/customer_confirm/{{user.phone}}">
+    <div class="modal fade bd-example-modal-sm " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true" id='myModal' data-keyboard="false" data-backdrop="static">
+        <div class=" modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Confirm Data</h5>
+                </div>
+                <div class="modal-body">
+                    Is this you?
+                </div>
+                <div class="modal-footer">
+                    <div>{{form.No(class ='btn btn-danger')}}</div>
+                    <div>{{form.Yes(class ='btn btn-primary')}}</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+<script>
+    $(document).ready(function () {
+        $("#myModal").modal('show');
+    });
+</script>
+
+
+
+
+
+{%endblock%}
+<!--
+{{user.first}} {{user.last}}
+{{user.age}}

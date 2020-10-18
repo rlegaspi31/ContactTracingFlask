@@ -1,0 +1,114 @@
+{%extends 'layout.html'%}
+{%block content%}
+
+<div class="home-wrapper">
+    <div>
+        <button type="button" id='data1' data-toggle="modal" data-backdrop="static" data-keyboard="false"
+            data-target="#confirm_data" class="btn  btn-info btn-lg btn-reg">Already Have a Data?</button>
+    </div>
+    <div>
+        <a type="button" class="btn  btn-danger btn-lg btn-reg" href="{{url_for('register')}}">Register</a>
+    </div>
+</div>
+
+
+<form class="form-modal" id="self-modal" method="POST" action="/confirm_data">
+    <div class="modal fade" id="confirm_data" tabindex="-1" role="dialog" aria-labelledby="confirm_dataForm">
+
+        <div class="modal-dialog" role="document" id="modal-source">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirm_dataForm">Confirm Data</h5>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="form-group row">
+                        {{form.phone.label(class = "form-control-label text-dark")}}
+                        <div class="col-sm-10">
+                            {%if form.phone.errors%}
+                            {{form.phone(class ="form-control form-control-lg is-valid")}}
+                            <div class="invalid-feedback">
+                                {%for error in form.phone.errors%}
+                                <h5>{{error}}</h5>
+                                {%endfor%}
+                            </div>
+
+                            {%else%}
+                            {{form.phone(class ="form-control form-control-sm ")}}
+
+                            {%endif%}
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        {{form.submit( class= "btn btn-primary")}}
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</form>
+{%block confirmdata%}
+{%endblock%}
+
+
+
+{%endblock%}
+{%block home%}
+
+
+<div class="list-group">
+    {%if user%}
+    {%for user in user.items%}
+    <div class="border">
+        <div class="media user-list">
+            <div class="media-body bg-light">
+                <a href="{{url_for('customer' ,phone = user.phone)}}">
+                    <h5 class="mt-0 text-primary">
+                        <span>{{user.first}}</span>
+                        <span>{{user.last}}</span>
+                    </h5>
+                </a>
+                <div class="text-secondary">
+                    {{user.time_check.strftime('%Y-%m-%d %I:%M %p')}}
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    {%endfor%}
+    {%endif%}
+</div>
+{%for page_num in user.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2)%}
+{%if page_num%}
+{%if user.page == page_num%}
+<a class="btn btn-info mb-6" href="{{url_for('home', page= page_num)}}">{{page_num}}</a>
+{%else%}
+<a class="btn btn-outline-info mb-4 " href="{{url_for('home', page= page_num)}}">{{page_num}}</a>
+{%endif%}
+{%else%}
+...
+{%endif%}
+
+{%endfor%}
+
+
+
+
+
+{%endblock%}
